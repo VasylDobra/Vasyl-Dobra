@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vasyl Dobra - Portfolio</title>
+  <style>
+    :root {
+      --primary-color: #D35400; /* Dark Orange */
+      --secondary-color: #A04000; /* Darker Orange */
+      --accent-color: #E67E22; /* Lighter accent */
+      --light-bg: #F3F3F3;
+      --mid-bg: #FFFFFF;
+      --dark-bg: #333;
+      --text-color: #333;
+    }
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+    }
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    /* Header with Cover Image */
+    header {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=4800');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 60px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 2.8em;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    /* Navigation */
+    nav {
+      background-color: var(--secondary-color);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0;
+    }
+    nav ul li a {
+      display: block;
+      padding: 15px 20px;
+      color: #fff;
+      transition: background 0.3s;
+    }
+    nav ul li a:hover {
+      background-color: var(--primary-color);
+    }
+    /* Sections */
+    section {
+      padding: 60px 0;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2em;
+      color: var(--primary-color);
+    }
+    /* About Section */
+    #about {
+      background-color: var(--mid-bg);
+    }
+    /* Professional Experience, Skills, Certifications, Projects & Contact Sections */
+    #experience,
+    #skills,
+    #certifications,
+    #projects,
+    #contact {
+      background-color: var(--light-bg);
+    }
+    /* Profile Image */
+    .profile-img {
+      display: block;
+      margin: 20px auto;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 4px solid var(--primary-color);
+    }
+    /* Professional Experience List */
+    .experience-list {
+      list-style: none;
+      padding: 0;
+    }
+    .experience-list li {
+      background-color: #eee;
+      margin: 10px auto;
+      padding: 15px;
+      border-radius: 5px;
+      max-width: 800px;
+    }
+    .experience-list li ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    /* Skills and Projects Lists */
+    .list-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+    }
+    .list-items li {
+      background-color: #eee;
+      margin: 10px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    /* Certifications */
+    .certification {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .certification img {
+      max-width: 250px;
+    }
+    /* Contact Form */
+    .contact-form {
+      background-color: var(--mid-bg);
+      border: 1px solid #ccc;
+      padding: 20px;
+      max-width: 600px;
+      margin: 40px auto 0 auto;
+      border-radius: 5px;
+    }
+    .contact-form h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+    .contact-form label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    .contact-form button {
+      margin-top: 15px;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background-color: var(--secondary-color);
+    }
+    /* Footer */
+    footer {
+      background-color: var(--secondary-color);
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Cover Image -->
+  <header>
+    <div class="container">
+      <h1>Vasyl Dobra</h1>
+      <p>Senior Supervisor | Project Manager | Business Analyst | Certified Scrum Master</p>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Professional Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <!-- Profile Photo -->
+      <img src="https://file.notion.so/f/f/99ea848a-757f-43fa-8636-f23c751357fb/45210d46-fc18-49da-a181-ff0845cd519e/Image.png?table=block&id=18e08cd0-a9f6-8195-8ffb-c6ce66e516eb&spaceId=99ea848a-757f-43fa-8636-f23c751357fb&expirationTimestamp=1738627200000&signature=mpawJkC-LqDa_5lJ8An_HSu_3VlwCYteTLTRiNSzHjg&downloadName=Image.png" alt="Vasyl Dobra" class="profile-img" />
+      <p>Hello! I’m Vasyl, a project manager, business analyst and certified scrum master with a strong background in digital transformation and process automation. With years of experience in managing projects across industries, I excel in optimizing workflows, improving efficiency, and driving strategic initiatives. My passion lies in data analysis, Agile methodologies, and exploring innovative technologies to enhance business operations.</p>
+      <p>Beyond my professional expertise, I have a deep interest in history, philosophy, psychology, and methodology. I’m currently expanding my skill set by learning Spanish and Italian, as well as diving into data analytics to broaden my career opportunities. I also have a strong appreciation for art, culture, and travel, recently exploring historical sites and museums across Europe.</p>
+      <p>As I navigate new professional opportunities, I am also considering launching my own business project to apply my skills in a meaningful way. Always eager to learn and grow, I embrace new challenges with an open mind and a drive for continuous improvement.</p>
+      <p>I am gay and proud of it. My friendly personality makes it easy for me to connect with others. My colleagues greatly enjoy working with me – I'm always ready to support and help others whenever they need it.</p>
+    </div>
+  </section>
+
+  <!-- Professional Experience Section -->
+  <section id="experience">
+    <div class="container">
+      <h2>Professional Experience</h2>
+      <ul class="experience-list">
+        <li>
+          <strong>Teleperformance - Project Manager/Senior Supervisor</strong><br>
+          Kaufland Project | Brno, CZ<br>
+          <em>November 2022 – November 2024</em>
+          <ul>
+            <li>Successfully scaled the team, doubling its size in 2023 while increasing project volume for Czech and Slovak markets.</li>
+            <li>Spearheaded the acquisition of the Polish market, set to double team capacity by 2024.</li>
+            <li>Managed team performance, ensuring successful expansion while maintaining high standards of project delivery.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Teleperformance - Project Manager</strong><br>
+          Volkswagen Project | Brno, CZ<br>
+          <em>March 2022 – November 2022</em>
+          <ul>
+            <li>Led project management for Volkswagen, ensuring quality standards were met, resulting in the opening of five new lines of business for brands such as Seat and Skoda.</li>
+            <li>Developed and implemented a comprehensive project plan for operations in 9 languages (EN, DE, ES, FR, IT, PT, PL, GR, DT).</li>
+            <li>Established project infrastructure including Green Start, operational tools, KPIs, quality measurements, and reporting systems.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Teleperformance - Supervisor</strong><br>
+          Volkswagen Project | Brno, CZ<br>
+          <em>July 2020 – March 2022</em>
+          <ul>
+            <li>Launched a new customer service project for Volkswagen with three lines of business, later expanding to four additional lines in 2021.</li>
+            <li>Played a key role in organizing the “Over The Air” (OTA) line for remote updates on Volkswagen ID3 and ID4 vehicles.</li>
+            <li>Oversaw reporting (daily, weekly, monthly) and presented at WBR, MBR, and QBR meetings to ensure transparent communication.</li>
+            <li>Created an Excel-based reporting system and transitioned some reports to Power BI.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Teleperformance - Supervisor/Deputy Manager</strong><br>
+          Amazon German Department | Pardubice, CZ<br>
+          <em>July 2019 – July 2020</em>
+          <ul>
+            <li>Managed and motivated a team of agents, improving KPIs through quality control, training, and mentoring.</li>
+            <li>Led supervisor and mentor shift planning, ensuring smooth operations.</li>
+            <li>Conducted agent observations and performance evaluations, recommending bonuses based on KPI achievements.</li>
+            <li>Acted as the main point of contact for Amazon regarding scheduling changes and reporting progress.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Teleperformance - Call Centre Agent</strong><br>
+          Amazon German Department | Pardubice, CZ<br>
+          <em>November 2018 – July 2019</em>
+          <ul>
+            <li>Handled incoming calls and resolved customer issues efficiently, achieving high KPIs and excellent customer feedback.</li>
+            <li>Promoted to Supervisor based on consistent performance and leadership potential.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Journalist and Lead Content Manager</strong><br>
+          Lead Content – Svalyava, Ukraine<br>
+          <em>April 2013 – April 2013</em>
+          <ul>
+            <li>Managed online content for leading Ukrainian publications, overseeing the production and quality of journalistic content.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Export/Import Manager</strong><br>
+          BHM – Mukachevo, Ukraine<br>
+          <em>July 2007 – April 2013</em>
+          <ul>
+            <li>Managed financial operations and export/import logistics, securing necessary licenses for international trade operations.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Interpreter</strong><br>
+          Wettstein Technik – Uzhhorod, Ukraine<br>
+          <em>November 2003 – May 2004</em>
+          <ul>
+            <li>Provided translation and statistical analysis for production data, offering insights into operational efficiency and cost-effectiveness.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Teacher</strong><br>
+          Gymnasium – Svaliava, Ukraine<br>
+          <em>January 2003 – November 2003</em>
+          <ul>
+            <li>Taught German, English, and Latin while developing curriculum and fostering language proficiency in students.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="list-items">
+        <li>Project Management (Lean & Six Sigma, Agile)</li>
+        <li>Team Leadership & Development</li>
+        <li>Business & Data Analysis (Excel, Power BI, Tableau, Salesforce, Jira, Confluence)</li>
+        <li>KPI Monitoring & Improvement</li>
+        <li>Multilingual Communication</li>
+        <li>Client Relations & Negotiations</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications">
+    <div class="container">
+      <h2>Certifications</h2>
+      <div class="certification">
+        <img src="https://www.notion.so/image/attachment%3Aa506845c-1ae6-476a-a8d1-e3c0f25ea0f9%3Asa-csm-600.png?table=block&id=18e08cd0-a9f6-80f9-8b60-f2e14bd89d76&spaceId=99ea848a-757f-43fa-8636-f23c751357fb&width=250&userId=189d872b-594c-81cd-b69f-0002b6a8c45c&cache=v2" alt="Certified Scrum Master" />
+        <p>Certified Scrum Master</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <p>Here are some highlights of my professional projects and business initiatives:</p>
+      <ul>
+        <li>
+          <strong>Teleperformance Initiatives:</strong> Led cross-functional teams and managed large-scale projects to optimize operational efficiency.
+        </li>
+        <li>
+          <strong>Innovative Business Solutions:</strong> Designed strategies for digital transformation and process improvements.
+        </li>
+        <li>
+          <strong>Personal Ventures:</strong> Developed creative projects that merge technology and management insights to solve real-world problems.
+        </li>
+      </ul>
+      <p>For more details, visit my <a href="https://www.linkedin.com/in/vasyl-dobra/" target="_blank">LinkedIn profile</a>.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>Let's create something amazing together! Reach out to me at:</p>
+      <ul>
+        <li>Email: <a href="mailto:vasyl@dobra.uk">vasyl@dobra.uk</a> / <a href="mailto:vasiadobra@gmail.com">vasiadobra@gmail.com</a></li>
+        <li>Telefon: <a href="tel:+420725417292">+420725417292</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/vasyl-dobra/" target="_blank">linkedin.com/in/vasyl-dobra</a></li>
+      </ul>
+      <!-- Contact Form Block -->
+      <div class="contact-form">
+        <h3>Send Me a Message</h3>
+        <form action="https://formspree.io/f/yourFormID" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="_replyto" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Vasyl Dobra. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
